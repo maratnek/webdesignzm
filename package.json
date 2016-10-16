@@ -1,5 +1,5 @@
 {
-  "name": "node-js-getting-started",
+  "name": "webdesignzm",
   "version": "0.2.5",
   "description": "A sample Node.js app using Express 4",
   "engines": {
@@ -15,12 +15,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "git+https://github.com/maratnek/webdesignzm.git"
   },
   "keywords": [
     "node",
     "heroku",
     "express"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maratnek/webdesignzm/issues"
+  },
+  "homepage": "https://github.com/maratnek/webdesignzm#readme",
+  "author": "zm"
 }
