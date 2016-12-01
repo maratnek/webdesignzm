@@ -63,6 +63,7 @@ gulp.task('watch', function () {
     gulp.watch('jadefiles/**', reload());
 });
 
+
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
