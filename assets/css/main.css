@@ -466,7 +466,7 @@ hr {
   z-index: 3; }
   #gamburger.order-form {
     background: rgba(209, 199, 160, 0.69);
-    position: fixed;
+    position: absolute;
     width: 45px;
     height: 45px;
     top: 0;
@@ -538,7 +538,7 @@ hr {
 
 #you-form {
   z-index: 2;
-  position: fixed;
+  position: absolute;
   display: none;
   background: rgba(209, 199, 160, 0.69);
   min-width: 100%;

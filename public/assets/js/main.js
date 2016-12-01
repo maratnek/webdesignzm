@@ -90,6 +90,13 @@ console.log("myJS");
 		});
 	})
 
+	$(window).on("orientationchange",function(){
+		vhconst = window.outerHeight;
+		$('.mybg').css({
+			'backgroundSize' : 'auto ' + vhconst + 'px'
+		});
+	});
+
 	// Parall
 	var head = $('.head').scrollTop();
 	$(window).scroll(function() {

@@ -47,7 +47,7 @@ gulp.task('sass', function () {
         }))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(gulp.dest('public/assets/css'))
-        .pipe(browserSync.reload({stream:true}))
+        .pipe(reload({stream:true}))
         .pipe(gulp.dest('assets/css'))
         ;
 });
@@ -60,6 +60,7 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
     gulp.watch('assets/js/**', ['js']);
+    gulp.watch('jadefiles/**', reload());
 });
 
 /**
@@ -71,9 +72,6 @@ gulp.task('default', ['browser-sync', 'watch']);
 
 // Image
 
-var src = 'assets/img';
-var dst = 'img';
-var pub = 'public/assets/img';
 
 var imagemin = require('gulp-imagemin'),
     cache = require('gulp-cache')
@@ -82,26 +80,28 @@ var imagemin = require('gulp-imagemin'),
     watermark = require('gulp-watermark'),
     rename = require('gulp-rename');
 
+var src = 'assets/img/*';
+var dst = 'img';
+var pub = 'public/assets/img/';
+
 gulp.task('image', ['imagesmall'], function () {
 // gulp.task('image', function () {
     return gulp.src(src)
-        .pipe(imageResize({
-            width : 1920,
-            height: 1080,
-            crop  : true,
-            upscale: true
-        }))
+        // .pipe(imageResize({
+        //     width : 1920,
+        //     height: 1080,
+        //     crop  : true,
+        //     upscale: true
+        // }))
         .pipe(watermark({
-            image: src + "watermark.png"
+            image: "assets/watermark/watermark.png"
         }))
         .pipe(rename(function (path){
-            console.log(path);
-            console.log(path.basename);
-            path.basename = path.basename.replace('ZMphotos','')
+            path.basename = path.basename.replace('','')
         }))
-        .pipe(rename(function (path){
-            path.basename = path.basename.replace('Original','')
-        }))
+        // .pipe(rename(function (path){
+        //     path.basename = path.basename.replace('','')
+        // }))
         .pipe(cache(imagemin()))
         .pipe(gulp.dest(pub));
 })
@@ -115,20 +115,20 @@ gulp.task('imagesmall', function () {
             upscale: true
         }))
         .pipe(watermark({
-            image: src + "watermark.png"
+            image: "assets/watermark/watermark.png"
         }))
         .pipe(rename(function (path){
-            path.basename = path.basename.replace('ZMphotos','')
+            path.basename = path.basename.replace('','')
         }))
-        .pipe(rename(function (path){
-            path.basename = path.basename.replace('Original','')
-        }))
+        // .pipe(rename(function (path){
+        //     path.basename = path.basename.replace('','back')
+        // }))
         .pipe(cache(imagemin({progressive: true})))
         .pipe(gulp.dest(pub + '/small'));
 })
 
 gulp.task('clearcache', function() { return cache.crearAll();});
-gulp.task('cleaready', function() {return del.sync(dst);});
+gulp.task('cleaready', function() {return del.sync(pub);});
 
 
 
