@@ -1,0 +1,115 @@
+@import "0-tools/normolize";
+@import "0-tools/bourbon/bourbon";
+
+@import "1-base/_base.sass";
+@import "1-base/_vars.sass";
+@import "5-color/_color.sass";
+@import "6-form/_order-form.sass";
+@import "2-modules/_footer.sass";
+
+$url_header: '../img/';
+
+body.loader {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(10,10,110,0.5);
+}
+
+html, body {
+	height: 100%;
+}
+
+header.head {
+	background-color: $bg_header;
+	background-image: url($url_header + 'bg_header2.jpg');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	z-index: -3;
+	height: 100vh;
+	background-size: cover;
+	margin-bottom: 50px;
+	// align
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+		
+	.mybg {
+		position: absolute;
+		background-color: $bg_header;
+		background-image: url($url_header + 'bg_header2.jpg');
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		z-index: 0;
+		// background-size: cover;
+		background-position: center center;
+		background-size: auto 100vh;
+		height: 100vh;
+		top: 0; left:0; width: 100%; height: 100%;
+	}
+	
+	.logo {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+	}
+	.blur {
+		z-index: 0;
+		position: absolute;
+		background: rgba(111, 80, 28, 0.2);
+		top: 0; left:0; width: 100%; height: 100%;
+		
+	}
+	h1, p {
+		z-index: 1;
+	}
+	h1 {
+		// position: absolute;
+		font-size: 3em;	
+		margin-bottom: 50px;
+	}
+	p {
+		// position: absolute;
+		color: white;
+	}
+}
+
+	section {
+		p {
+			text-align: justify;
+			max-width: 600px;
+			margin: 0 auto 20px;
+		}
+	}
+
+// SVG
+#mysvg {
+	height: 100px;
+	width: 100%;
+	padding: 10px;
+}
+
+path {
+	fill: none;
+	fill-rule:evenodd;
+	stroke:$logo_color;
+	stroke-width:9px;
+	stroke-linecap: round;
+	stroke-linejoin:miter;
+	stroke-opacity:1;
+	transform: scale(0.45) translateX(20px) ;//translate(200px,200px);
+}
+
+// @keyframes dash {
+//   from {
+//     stroke-dashoffset: 1000;
+// 	stroke-dasharray: 1000;
+//     transform: scale(0.5);
+//   }
+//   to {
+//     stroke-dashoffset: 0;
+// 	stroke-dasharray: 1000;
+//     transform: scale(0.5);
+//   }
+// }

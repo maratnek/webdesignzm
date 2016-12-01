@@ -10,7 +10,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "ejs": "2.4.1",
     "express": "4.13.3"
   },
   "repository": {
@@ -27,5 +26,20 @@
     "url": "https://github.com/maratnek/webdesignzm/issues"
   },
   "homepage": "https://github.com/maratnek/webdesignzm#readme",
-  "author": "zm"
+  "author": "zm",
+  "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "del": "^2.2.2",
+    "express": "^4.13.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-image-resize": "^0.10.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-watermark": "0.0.1",
+    "jade": "^1.11.0"
+  }
 }
