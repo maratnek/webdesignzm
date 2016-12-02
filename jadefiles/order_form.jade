@@ -1,7 +1,7 @@
 #you-form
 	.col-md-8.col-sm-6.col-xs-0
 	.col-md-4.col-sm-6.col-xs-12
-		form
+		form(action="/process" method=POST)
 			.form-group
 				label(for="exampleInputName") Your Name
 				br
@@ -14,5 +14,7 @@
 				label(for="AreaOffer") Your Offer
 				br
 				textarea.class-control
+			.form-group
+				.g-recaptcha(data-sitekey='6Le9pg0UAAAAAL52aakApGSzFx6rktwGJxXhZMP7')
 			.form-group
 				button.btn.btn-default(type="submit") Submit
