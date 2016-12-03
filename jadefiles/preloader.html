@@ -20,7 +20,7 @@
     border-radius: 50%;
   }
   .preload_anim:after {
-    content: '';
+    content: ' ';
     display: block;
     width: 100px;
     height: 100px;
@@ -47,14 +47,14 @@
   {
     el.style.opacity = 1;
     var interhellopreloader = setInterval(function(){
-     el.style.opacity -= 0.01;
-     if (el.style.opacity <=0.05){ 
+     el.style.opacity -= 0.1;
+     if (el.style.opacity <=0.1){ 
        clearInterval(interhellopreloader);
        hellopreloader.style.display = "none";
      }
    }, 10);
   }
   window.onload = function(){
-  	setTimeout(function(){fadeOutnojquery(hellopreloader);},10);
+  	setTimeout(function(){fadeOutnojquery(hellopreloader);},1);
   };
 </script>

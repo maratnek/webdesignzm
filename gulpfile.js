@@ -2,7 +2,7 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
-// var cp          = require('child_process');
+var cp          = require('child_process');
 var reload = browserSync.reload;
 var nodemon = require('gulp-nodemon');
 
@@ -12,14 +12,31 @@ var messages = {
 
 gulp.task('nodemon', function (cb) {
     browserSync.notify(messages.expressBuild);
+    
     var called = false;
-    return nodemon({script: 'index.js'}).on('start', function () {
+    return nodemon({ 
+       script: 'index.js',
+       ext: 'js, jade, html'
+    })
+    .on('start', function () {
         if (!called) {
             called = true;
             cb();
         }
     });
-});/**
+});
+
+// gulp.task('nodemon-build', function (done) {
+//     browserSync.notify(messages.jekyllBuild);
+//     return cp.spawn( 'node' , ['index.js'], {stdio: 'inherit'})
+//         .on('close', done);
+// });
+
+gulp.task('nodemon-rebuild', function () {
+    browserSync.reload({stream:true});
+});
+
+/**
  * Wait for jekyll-build, then launch the Server
  */
 
@@ -45,7 +62,7 @@ gulp.task('sass', function () {
             includePaths: ['css'],
             onError: browserSync.notify
         }))
-        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(prefix(['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'], { cascade: true }))
         .pipe(gulp.dest('public/assets/css'))
         .pipe(reload({stream:true}))
         .pipe(gulp.dest('assets/css'))
@@ -60,7 +77,8 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
     gulp.watch('assets/js/**', ['js']);
-    gulp.watch('jadefiles/**', reload());
+    // gulp.watch(['*.html', 'jadefiles/*'], ['nodemon-rebuild']);
+    gulp.watch(["*.html", "jadefiles/**"]).on("change", reload);
 });
 
 

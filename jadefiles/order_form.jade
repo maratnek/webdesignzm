@@ -1,11 +1,11 @@
 #you-form
 	.col-md-8.col-sm-6.col-xs-0
 	.col-md-4.col-sm-6.col-xs-12
-		form(action="/process" method=POST)
+		form(action="/process" method="POST")
 			.form-group
 				label(for="exampleInputName") Your Name
 				br
-				input(type="text" id="exampleInputName" placeholder="Your Name" class="class-control")
+				input.class-control(type="text" id="exampleInputName" placeholder="Your Name")
 			.form-group
 				label(for="exampleInputEmail") Your Email
 				br
@@ -14,7 +14,8 @@
 				label(for="AreaOffer") Your Offer
 				br
 				textarea.class-control
+			//- .form-group
+				.captcha
+					.g-recaptcha(data-sitekey='6Le9pg0UAAAAAL52aakApGSzFx6rktwGJxXhZMP7')
 			.form-group
-				.g-recaptcha(data-sitekey='6Le9pg0UAAAAAL52aakApGSzFx6rktwGJxXhZMP7')
-			.form-group
-				button.btn.btn-default(type="submit") Submit
+				button.btn.btn-default(type="button") Submit

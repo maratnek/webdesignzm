@@ -17,4 +17,11 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
+// POST method route
+app.post('/', function (req, res) {
+	console.log('Post request!!!');
+	console.log(req);
+	console.log(res);
+  res.send('POST request to the homepage');
+});
 

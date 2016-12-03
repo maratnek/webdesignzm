@@ -74,25 +74,37 @@ console.log("myJS");
 		$('#you-form').toggle();
 	});
 
+	$("button").click(function(){
+			console.log('mypost');
+        $.post("/",
+        {
+          name: "Donald Duck",
+          city: "Duckburg"
+        },
+        function(data,status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
+
+
+
+	// Parallax
 	console.log('trace');
-	// var vhconst = parseInt($('.mybg').css('backgroundSize')
-	// 	.match(/\d{3,4}/g));
-	// console.log(vhconst);
 	vhconst = window.outerHeight;
-	console.log(vhconst);
+	var bg_size = '.head';
 
 	$(window).resize(function(){
-		console.log('my_resize');
+		console.log('resize');
 		console.log(window.height);
 		vhconst = window.outerHeight;
-		$('.mybg').css({
+		$(bg_size).css({
 			'backgroundSize' : 'auto ' + vhconst + 'px'
 		});
 	})
 
 	$(window).on("orientationchange",function(){
 		vhconst = window.outerHeight;
-		$('.mybg').css({
+		$(bg_size).css({
 			'backgroundSize' : 'auto ' + vhconst + 'px'
 		});
 	});
@@ -101,8 +113,6 @@ console.log("myJS");
 	var head = $('.head').scrollTop();
 	$(window).scroll(function() {
 		var wscroll = $(this).scrollTop();
-		console.log(wscroll);
-		console.log('trace');
 		$('.head h1').css({
 			'transform' : 'translate(0px, '+ wscroll/1.5 + '%)'
 		});
@@ -113,6 +123,7 @@ console.log("myJS");
 		// $('.footer').css({
 		// 	'transform' : 'translateY(' + wscroll*1.2 + 'px) '//scale(' + (1.7 - 1/(wscroll+1.3)) +')'
 		// });
+
 		var ftop = $('.footer').offset().top;
 		// console.log(ftop);
 		if (wscroll+1000 > ftop - vhconst) {
@@ -121,9 +132,10 @@ console.log("myJS");
 				(wscroll - ftop) + 'px'});
 		}
 
-		$('.mybg').css({
+		$(bg_size).css({
 			'backgroundSize' : 'auto ' + (vhconst*(1+(wscroll*0.3/vhconst))) + 'px'
 		});
+
 	});
 
 }.call(this));
