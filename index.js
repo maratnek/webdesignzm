@@ -30,13 +30,14 @@ app.post('/', function (req, res) {
 		console.log('Form' + req.query.form);
 		console.log('  ' + req.body.name);
 		console.log('  ' + req.body.city);
+		
 		// res.send({success:true});
 	} else {
 		console.log('redirect');
 		res.redirect(303, '/thank-you');
 	}
-	res.redirect(303, '/footer');
+  res.send('POST request to the homepage');
+	// res.redirect(303, '/footer');
 	// res.redirect(303, '/thank-you.html');
-  // res.send('POST request to the homepage');
 });
 
