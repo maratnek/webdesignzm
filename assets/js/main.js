@@ -79,12 +79,9 @@ console.log("myJS");
         $.post("/",
         {
           name: "Donald Duck",
-          city: "Duckburg"
+          city: "Duckburg",
+          g-recaptcha-response: 'kkkkkkk'
         },
-        function (data, status){
-            alert("ERROR Data: " + data + "\nStatus: " + status);
-        }
-        ,
         function(data,status){
             alert("Data: " + data + "\nStatus: " + status);
         });
