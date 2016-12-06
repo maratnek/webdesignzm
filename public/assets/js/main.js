@@ -74,6 +74,7 @@ console.log("myJS");
 		$('#you-form').toggle();
 	});
 
+
 	// $('form').submit(function(){
 	// 		console.log('mypost');
 	// 		console.log( $("#g-recaptcha-response").val());
@@ -87,7 +88,6 @@ console.log("myJS");
  //            alert("Data: " + data + "\nStatus: " + status);
  //        });
  //    });
-
 
 
 	// Parallax
