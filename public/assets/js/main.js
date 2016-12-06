@@ -74,18 +74,19 @@ console.log("myJS");
 		$('#you-form').toggle();
 	});
 
-	$("button").click(function(){
-			console.log('mypost');
-        $.post("/",
-        {
-          name: "Donald Duck",
-          city: "Duckburg",
-          g-recaptcha-response: 'kkkkkkk'
-        },
-        function(data,status){
-            alert("Data: " + data + "\nStatus: " + status);
-        });
-    });
+	// $("button").click(function(){
+	// 		console.log('mypost');
+ //        $.post("/",
+ //        {
+ //          name: "Donald Duck",
+ //          city: "Duckburg",
+ //        },
+ //        function(data,status){
+ //            alert("Data: " + data + "\nStatus: " + status);
+ //        });
+ //    });
+
+ 	$
 
 
 
