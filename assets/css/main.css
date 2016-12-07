@@ -493,9 +493,9 @@ hr {
               animation: sky_anim_right 4s 0s ease; }
 
 .form-show:after {
-  -webkit-transform: translateY(6px) rotate(-45deg);
-      -ms-transform: translateY(6px) rotate(-45deg);
-          transform: translateY(6px) rotate(-45deg); }
+  -webkit-transform: translateY(5px) rotate(-45deg);
+      -ms-transform: translateY(5px) rotate(-45deg);
+          transform: translateY(5px) rotate(-45deg); }
 
 .form-show:before {
   -webkit-transform: translateY(-6px) rotate(45deg);
@@ -533,36 +533,6 @@ hr {
   to {
     -webkit-transform: translateY(-6px) rotate(45deg);
             transform: translateY(-6px) rotate(45deg); } }
-
-#you-form {
-  z-index: 2;
-  position: absolute;
-  display: none;
-  background: rgba(209, 199, 160, 0.69);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  padding-top: 80px;
-  border: 2px solid #888;
-  font-size: 1.2em;
-  font-family: 'Roboto'; }
-  #you-form input, #you-form textarea {
-    max-width: 100%;
-    padding-left: 20px;
-    width: 100%;
-    height: 40px;
-    border-radius: 0; }
-  #you-form textarea {
-    height: 160px; }
-  #you-form button {
-    background: white;
-    display: block;
-    width: 304px;
-    height: 78px;
-    margin: auto;
-    padding: 0; }
 
 @-webkit-keyframes sky_anim_right {
   from {
@@ -604,9 +574,42 @@ hr {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg); } }
 
-.captcha .g-recaptcha {
-  width: 304px;
-  margin: auto; }
+#you-form {
+  z-index: 2;
+  position: absolute;
+  display: none;
+  background: rgba(209, 199, 160, 0.69);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  padding-top: 80px;
+  border: 2px solid #888;
+  font-size: 1.2em;
+  font-family: 'Roboto'; }
+  #you-form input, #you-form textarea {
+    max-width: 100%;
+    padding-left: 20px;
+    width: 100%;
+    border-radius: 0; }
+  #you-form input {
+    height: 2em; }
+  #you-form textarea {
+    width: 100%; }
+  #you-form button {
+    width: 100%;
+    height: 78px;
+    margin: auto;
+    padding: 0;
+    margin: 0; }
+  #you-form textarea:focus, #you-form button:focus {
+    border-color: #67512a; }
+
+.captcha {
+  width: 100%; }
+  .captcha .g-recaptcha:first-child div {
+    margin: auto; }
 
 header.head {
   background-color: #646464;

@@ -15,12 +15,54 @@ app.get('/', function(request, response) {
   response.render('index',{title: 'WebDesignZM'});
 });
 
+app.get('/footer', function(request, response) {
+  response.render('footer',{title: 'WebDesignZM'});
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
 app.use(require('body-parser').urlencoded({extended:true}));
 
+// Send Email Nodemailer
+var credentials = require('./credentials.js')
+var nodemailer = require('nodemailer');
+// var mailTransport = nodemailer.createTransport('SMTP',{
+// 	service: 'Gmail',
+// 	auth: {
+// 		user: 'webdesignzm@gmail.com',
+// 		password: 'fzntkrjhcb1904'
+// 		// user: credentials.user.email, 
+// 		// password: credentials.user.password, 
+// 	}
+// })
+
+var smtpTransport = require('nodemailer-smtp-transport');
+var mailTransport = nodemailer.createTransport(
+  smtpTransport({
+  	service: 'Gmail',
+  	auth: {
+  		user: 'zm@webdesignzm.com',
+  		password: 'fzntkrjhcb1904'
+  	}
+  })
+);
+
+// var mailTransport = nodemailer.createTransport(
+// 	'smtps://webdesignzm@gmail.com:fzntkrjhcb1904@smtp.gmail.com');
+
+mailTransport.sendMail(
+	{
+		from: '"WebDesignZM" <info@webdesignzm.com>',
+		to: 'zm@webdesignzm.com',
+		subject: 'You offer with WebDesignZM',
+		text: 'Fank-you for you offer!',
+		html: '<b>hello world</b>'
+	}, function(err){
+		if(err) return console.error('Not send letter: ' + err);
+	}
+);
 
 
 // POST method route
@@ -40,7 +82,9 @@ app.post('/', function (req, res) {
     	return res.send(err.message);
     }
     console.log('verified');
-    res.send('verified');
+    // res.send('verified');
+    // res.redirect(303, 'footer');
+    res.redirect(303, '/');
   });
 
 

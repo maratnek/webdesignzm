@@ -74,23 +74,6 @@ console.log("myJS");
 		$('#you-form').toggle();
 	});
 
-<<<<<<< HEAD
-	// $("button").click(function(){
-	// 		console.log('mypost');
- //        $.post("/",
- //        {
- //          name: "Donald Duck",
- //          city: "Duckburg",
- //        },
- //        function(data,status){
- //            alert("Data: " + data + "\nStatus: " + status);
- //        });
- //    });
-
- 	$
-=======
->>>>>>> f22b403b26accd7248a77bbb6e9df6ae6e5ce660
-
 	// $('form').submit(function(){
 	// 		console.log('mypost');
 	// 		console.log( $("#g-recaptcha-response").val());
@@ -104,6 +87,7 @@ console.log("myJS");
  //            alert("Data: " + data + "\nStatus: " + status);
  //        });
  //    });
+
 
 
 	// Parallax
@@ -157,5 +141,4 @@ console.log("myJS");
 	});
 
 }.call(this));
-
 

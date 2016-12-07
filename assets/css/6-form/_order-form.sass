@@ -1,6 +1,7 @@
 $logo_color: #0b365a
 $bg_color: rgba(209, 199, 160, 0.69)
 $bg_color2: rgb(209, 199, 160)
+$br_color: #67512a
 
 #gamburger
 	position: absolute
@@ -34,7 +35,7 @@ $bg_color2: rgb(209, 199, 160)
 
 .form-show
 	&:after
-		transform: translateY(6px) rotate(-45deg) 
+		transform: translateY(5px) rotate(-45deg) 
 		// animation: exit_anim_l 4s alternate
 
 	&:before
@@ -52,44 +53,6 @@ $bg_color2: rgb(209, 199, 160)
 		transform: translateY(-6px) rotate(45deg) 
 	to
 		transform: translateY(-6px) rotate(45deg) 
-
-
-#you-form
-	z-index: 2
-	position: absolute 
-	display: none 
-	background: $bg_color
-	top: 0
-	left: 0
-	width: 100%
-	height: 100%
-	// min-width: 100%
-	// min-height: 100%
-	padding: 20px
-	padding-top: 80px
-	border: 2px solid #888
-	font-size: 1.2em
-	font-family: 'Roboto'
-
-
-	input, textarea
-		max-width: 100%
-		padding-left: 20px
-		width: 100% 
-		height: 40px
-		border-radius: 0
-
-	textarea
-		height: 160px
-
-	button
-		background: white 
-		display: block
-		width: 304px
-		height: 78px
-		margin: auto
-		padding: 0
-
 
 	
 @keyframes sky_anim_right
@@ -110,9 +73,51 @@ $bg_color2: rgb(209, 199, 160)
 	to
 		transform: rotate(45deg)
 
-.captcha
-	// background: #fff 
-	// width: 100%
-	.g-recaptcha
-		width: 304px
+#you-form
+	z-index: 2
+	position: absolute 
+	display: none 
+	background: $bg_color
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	padding: 20px
+	padding-top: 80px
+	border: 2px solid #888
+	font-size: 1.2em
+	font-family: 'Roboto'
+
+
+	input, textarea
+		max-width: 100%
+		padding-left: 20px
+		width: 100% 
+		border-radius: 0
+
+	input
+	  height: 2em
+
+	textarea
+		width: 100%
+
+	button
+		width: 100%
+		height: 78px
 		margin: auto
+		padding: 0
+		margin: 0
+
+	textarea, button
+		&:focus
+			border-color: $br_color
+
+
+.captcha
+	// background: white
+	width: 100%
+	.g-recaptcha
+		&:first-child div
+			margin: auto
+			// border: 1px solid $br_color
+
