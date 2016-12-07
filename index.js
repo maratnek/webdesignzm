@@ -29,7 +29,9 @@ app.post('/', function (req, res) {
 
   var privateKey = '6Le9pg0UAAAAALT4rTdbTawJuY0AAzcsSP6GK4qX'; // your private key here 
   //var ip = req.ip;
+  // var response = req.body.gRecRes;
   var response = req.body['g-recaptcha-response'];
+  console.log(response);
       
   simple_recaptcha(privateKey, response, function(err) {
     if (err){ 

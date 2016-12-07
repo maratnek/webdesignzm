@@ -1,21 +1,21 @@
 #you-form
 	.col-md-8.col-sm-6.col-xs-0
 	.col-md-4.col-sm-6.col-xs-12
-		form(action="/process" method="POST")
+		form(action="" method="POST" role="form")
 			.form-group
-				label(for="exampleInputName") Your Name
+				label(for="InputName") Your Name
 				br
-				input.class-control(type="text" id="exampleInputName" placeholder="Your Name")
+				input.class-control(type="text" id="exampleInputName" placeholder="Adam" required)
 			.form-group
-				label(for="exampleInputEmail") Your Email
+				label(for="InputEmail") Your Email
 				br
-				input.class-control(type="email" id="exampleInputEmail" placeholder="Your Email")
+				input.class-control(type="email" id="exampleInputEmail" placeholder="your@mail.com" required)
 			.form-group
 				label(for="AreaOffer") Your Offer
 				br
 				textarea.class-control
 			.form-group
 				.captcha
-					.g-recaptcha(data-sitekey='6Le9pg0UAAAAAL52aakApGSzFx6rktwGJxXhZMP7' )
+					.g-recaptcha(data-sitekey='6Le9pg0UAAAAAL52aakApGSzFx6rktwGJxXhZMP7')
 			.form-group
-				button.btn.btn-default(type="button") Submit
+				button.btn.btn-default(type="submit") Submit
