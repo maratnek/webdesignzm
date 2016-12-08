@@ -38,23 +38,23 @@ var nodemailer = require('nodemailer');
 // 	}
 // })
 
-var smtpTransport = require('nodemailer-smtp-transport');
-var mailTransport = nodemailer.createTransport(
-  smtpTransport({
-  	// service: 'gmail',
-  	// auth: {
-  	// 	user: 'zm@webdesignzm.com',
-  	// 	password: 'fzntkrjhcb1904'
-  	// }
-  	port: 25,
-  	host: 'smtp.yandex.ru',
-  	// secure: true,
-  	auth: {
-  		user: 'marzab.22@yandex.ru',
-  		password: 'fzntkrjhcb'
-  	}
-  })
-);
+// var smtpTransport = require('nodemailer-smtp-transport');
+// var mailTransport = nodemailer.createTransport(
+//   smtpTransport({
+//   	// service: 'gmail',
+//   	// auth: {
+//   	// 	user: 'zm@webdesignzm.com',
+//   	// 	password: 'fzntkrjhcb1904'
+//   	// }
+//   	port: 25,
+//   	host: 'smtp.yandex.ru',
+//   	// secure: true,
+//   	auth: {
+//   		user: 'marzab.22@yandex.ru',
+//   		password: 'fzntkrjhcb'
+//   	}
+//   })
+// );
 
 // var mailTransport = nodemailer.createTransport(
 // 	'smtps://webdesignzm@gmail.com:fzntkrjhcb1904@smtp.gmail.com');
