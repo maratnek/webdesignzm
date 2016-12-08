@@ -26,7 +26,7 @@ app.listen(app.get('port'), function() {
 app.use(require('body-parser').urlencoded({extended:true}));
 
 // Send Email Nodemailer
-var credentials = require('./credentials.js')
+// var credentials = require('./credentials.js')
 var nodemailer = require('nodemailer');
 // var mailTransport = nodemailer.createTransport('SMTP',{
 // 	service: 'Gmail',
