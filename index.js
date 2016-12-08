@@ -19,6 +19,11 @@ app.get('/footer', function(request, response) {
   response.render('footer',{title: 'WebDesignZM'});
 });
 
+
+app.get('/a9d3daeca040', function(request, response) {
+  response.render('a9d3daeca040');
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
