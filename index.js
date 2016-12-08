@@ -41,10 +41,16 @@ var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var mailTransport = nodemailer.createTransport(
   smtpTransport({
-  	service: 'gmail',
+  	// service: 'gmail',
+  	// auth: {
+  	// 	user: 'zm@webdesignzm.com',
+  	// 	password: 'fzntkrjhcb1904'
+  	// }
+  	port: 465,
+  	host: '127.0.0.1',
   	auth: {
-  		user: 'zm@webdesignzm.com',
-  		password: 'fzntkrjhcb1904'
+  		user: 'marzab.22@yandex.ru',
+  		password: 'fzntkrjhcb'
   	}
   })
 );
@@ -54,8 +60,8 @@ var mailTransport = nodemailer.createTransport(
 
 mailTransport.sendMail(
 	{
-		from: '"WebDesignZM" <info@webdesignzm.com>',
-		to: 'zm@webdesignzm.com',
+		from: 'marzab.22@yandex.ru',
+		to: 'webdesignzm@gmail.com',
 		subject: 'You offer with WebDesignZM',
 		text: 'Fank-you for you offer!',
 		html: '<b>hello world</b>'
