@@ -33,6 +33,18 @@ app.use(require('body-parser').urlencoded({extended:true}));
 // Send Email Nodemailer
 // var credentials = require('./credentials.js')
 var nodemailer = require('nodemailer');
+
+  var mailTransport = 
+    nodemailer.createTransport(
+      'smtps://zm@webdesignzm.com:fzntkrjhcb1904@smtp.yandex.ru');
+
+mailTransport.verify(function(error, success) {
+   if (error) {
+        console.log(error);
+   } else {
+        console.log('Server is ready to take our messages');
+   }
+});
 // var mailTransport = nodemailer.createTransport('SMTP',{
 // 	service: 'Gmail',
 // 	auth: {
@@ -42,31 +54,37 @@ var nodemailer = require('nodemailer');
 // 		// password: credentials.user.password, 
 // 	}
 // })
+// var smtpTransport = require('nodemailer-smtp-transport');
+// var mailTransport = nodemailer.createTransport(
+//   smtpTransport({
+//   	// service: 'gmail',
+//   	// auth: {
+//   	// 	user: 'webdesignzm@gmail.com',
+//   	// 	password: 'fzntkrjhcb1904'
+//   	// }
+//     service: 'Yandex',
+//   	auth: {
+//   		user: 'zm@webdesignzm.com',
+//   		pass: 'fzntkrjhcb1904'
+//       // password_dev: 'tjnsehnyfjdzhnkh'
+//   	}
+//   })
+// );
 
-var smtpTransport = require('nodemailer-smtp-transport');
-var mailTransport = nodemailer.createTransport(
-  smtpTransport({
-  	service: 'gmail',
-  	auth: {
-  		user: 'zm@webdesignzm.com',
-  		password: 'fzntkrjhcb1904'
-  	}
-  	// port: 25,
-  	// host: 'smtp.yandex.ru',
-  	// // secure: true,
-  	// auth: {
-  	// 	user: 'marzab.22@yandex.ru',
-  	// 	password: 'fzntkrjhcb'
-  	// }
-  })
-);
+// mailTransport.verify(function(error, success) {
+//    if (error) {
+//         console.log(error);
+//    } else {
+//         console.log('Server is ready to take our messages');
+//    }
+// });
 
 // var mailTransport = nodemailer.createTransport(
 // 	'smtps://webdesignzm@gmail.com:fzntkrjhcb1904@smtp.gmail.com');
 
 mailTransport.sendMail(
 	{
-		from: 'webdesignzm@gmail.com',
+		from: 'zm@webdesignzm.com',
 		to: 'marzab.22@yandex.ru',
 		subject: 'You offer with WebDesignZM',
 		text: 'Fank-you for you offer!',
