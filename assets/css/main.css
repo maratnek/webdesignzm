@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -7,6 +8,7 @@
  */
 /* Document
    ========================================================================== */
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -461,6 +463,44 @@ hr {
   margin: 10px 0 30px;
   height: 0; }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?sns7l5");
+  src: url("fonts/icomoon.eot?sns7l5#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?sns7l5") format("truetype"), url("fonts/icomoon.woff?sns7l5") format("woff"), url("fonts/icomoon.svg?sns7l5#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-design:before {
+  content: ""; }
+
+.icon-design-tool:before {
+  content: ""; }
+
+.icon-list:before {
+  content: ""; }
+
+.icon-paper-plane:before {
+  content: ""; }
+
+.icon-programming:before {
+  content: ""; }
+
+.icon-prototype:before {
+  content: ""; }
+
 #gamburger {
   position: absolute;
   z-index: 3; }
@@ -634,20 +674,6 @@ header.head {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
-  header.head .mybg {
-    position: absolute;
-    background-color: #646464;
-    background-image: url("../img/bg_header2.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    z-index: 0;
-    background-position: center center;
-    background-size: auto 100vh;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
   header.head .logo {
     position: absolute;
     top: 0;
@@ -685,12 +711,70 @@ path {
       -ms-transform: scale(0.45) translateX(20px);
           transform: scale(0.45) translateX(20px); }
 
-section p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1em;
-  text-align: justify;
-  max-width: 600px;
-  margin: 0 auto 20px; }
+section {
+  max-width: 960px; }
+
+.process {
+  margin: auto;
+  padding-bottom: 150px;
+  display: block; }
+  .process h2 {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 32px; }
+  .process .stage {
+    width: 11.875em;
+    margin: auto; }
+    .process .stage .icon-box {
+      background: #eeeeee;
+      border-radius: 100%;
+      height: 90px;
+      width: 90px;
+      margin: auto;
+      margin-top: 20px;
+      text-align: center;
+      -webkit-box-shadow: 0 13px 11px -5px #444;
+              box-shadow: 0 13px 11px -5px #444;
+        box-shadow-vertical-align: middle; }
+      .process .stage .icon-box .fs-icon {
+        font-size: 3.125em;
+        line-height: 2.0625em;
+        color: #111; }
+    .process .stage .card {
+      -webkit-box-shadow: 0px 15px 30px -14px #111;
+              box-shadow: 0px 15px 30px -14px #111;
+      height: 18.125em;
+      margin-bottom: 50px; }
+      .process .stage .card h3 {
+        width: 100%;
+        height: 55px;
+        text-align: center;
+        margin-top: 35px;
+        vertical-align: middle;
+        background: #342a29;
+        color: white;
+        font-size: 1.125em;
+        font-weight: 300; }
+      .process .stage .card h3:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle; }
+      .process .stage .card p {
+        margin: 10px;
+        font-size: 1em; }
+
+.technical-task {
+  height: 500px;
+  margin: auto;
+  background: #763029;
+  background-origin: border-box;
+  background-clip: content-box;
+  clear: both;
+  color: white; }
+  .technical-task h3 {
+    text-align: center; }
 
 footer.footer {
   background-color: #646464;
@@ -707,8 +791,7 @@ footer.footer {
 
 body.loader {
   width: 100%;
-  height: 100%;
-  background-color: rgba(10, 10, 110, 0.5); }
+  height: 100%; }
 
 html, body {
   height: 100%; }

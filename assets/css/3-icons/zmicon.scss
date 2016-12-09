@@ -1,0 +1,59 @@
+@import "variables";
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$icomoon-font-path}/icomoon.eot?sns7l5');
+  src:  url('#{$icomoon-font-path}/icomoon.eot?sns7l5#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/icomoon.ttf?sns7l5') format('truetype'),
+    url('#{$icomoon-font-path}/icomoon.woff?sns7l5') format('woff'),
+    url('#{$icomoon-font-path}/icomoon.svg?sns7l5#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-design {
+  &:before {
+    content: $icon-design;
+  }
+}
+.icon-design-tool {
+  &:before {
+    content: $icon-design-tool;
+  }
+}
+.icon-list {
+  &:before {
+    content: $icon-list;
+  }
+}
+.icon-paper-plane {
+  &:before {
+    content: $icon-paper-plane;
+  }
+}
+.icon-programming {
+  &:before {
+    content: $icon-programming;
+  }
+}
+.icon-prototype {
+  &:before {
+    content: $icon-prototype;
+  }
+}
+

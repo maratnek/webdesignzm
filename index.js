@@ -20,10 +20,6 @@ app.get('/footer', function(request, response) {
 });
 
 
-app.get('/a9d3daeca040', function(request, response) {
-  response.render('a9d3daeca040');
-});
-
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
@@ -33,10 +29,16 @@ app.use(require('body-parser').urlencoded({extended:true}));
 // Send Email Nodemailer
 // var credentials = require('./credentials.js')
 var nodemailer = require('nodemailer');
-
-  var mailTransport = 
-    nodemailer.createTransport(
-      'smtps://zm@webdesignzm.com:fzntkrjhcb1904@smtp.yandex.ru');
+var smtpTransport = require('nodemailer-smtp-transport');
+var mailTransport = nodemailer.createTransport(
+  smtpTransport({
+    service: 'Yandex',
+    auth: {
+      user: 'zm@webdesignzm.com',
+      pass: 'fzntkrjhcb1904'
+    }
+  })
+);
 
 mailTransport.verify(function(error, success) {
    if (error) {
@@ -45,75 +47,42 @@ mailTransport.verify(function(error, success) {
         console.log('Server is ready to take our messages');
    }
 });
-// var mailTransport = nodemailer.createTransport('SMTP',{
-// 	service: 'Gmail',
-// 	auth: {
-// 		user: 'webdesignzm@gmail.com',
-// 		password: 'fzntkrjhcb1904'
-// 		// user: credentials.user.email, 
-// 		// password: credentials.user.password, 
-// 	}
-// })
-// var smtpTransport = require('nodemailer-smtp-transport');
-// var mailTransport = nodemailer.createTransport(
-//   smtpTransport({
-//   	// service: 'gmail',
-//   	// auth: {
-//   	// 	user: 'webdesignzm@gmail.com',
-//   	// 	password: 'fzntkrjhcb1904'
-//   	// }
-//     service: 'Yandex',
-//   	auth: {
-//   		user: 'zm@webdesignzm.com',
-//   		pass: 'fzntkrjhcb1904'
-//       // password_dev: 'tjnsehnyfjdzhnkh'
-//   	}
-//   })
-// );
 
-// mailTransport.verify(function(error, success) {
-//    if (error) {
-//         console.log(error);
-//    } else {
-//         console.log('Server is ready to take our messages');
-//    }
-// });
-
-// var mailTransport = nodemailer.createTransport(
-// 	'smtps://webdesignzm@gmail.com:fzntkrjhcb1904@smtp.gmail.com');
-
-mailTransport.sendMail(
-	{
-		from: 'zm@webdesignzm.com',
-		to: 'marzab.22@yandex.ru',
-		subject: 'You offer with WebDesignZM',
-		text: 'Fank-you for you offer!',
-		html: '<b>hello world</b>'
-	}, function(err){
-		if(err) return console.error('Not send letter: ' + err);
-	}
-);
-
+function sendMail(mess_text){
+  mailTransport.sendMail(
+    {
+      from: 'zm@webdesignzm.com',
+      to: 'marzab.22@yandex.ru', subject: 'You offer with WebDesignZM',
+      text: 'Fank-you for you offer!',
+      html: mess_text
+    }, 
+    function(err){
+      if(err) return console.error('Not send letter: ' + err);
+    }
+  );
+}
 
 // POST method route
 app.post('/', function (req, res) {
 	console.log('Post request!!!');
 
   var privateKey = '6Le9pg0UAAAAALT4rTdbTawJuY0AAzcsSP6GK4qX'; // your private key here 
-  //var ip = req.ip;
-  // var response = req.body.gRecRes;
   var response = req.body['g-recaptcha-response'];
   console.log(response);
       
   simple_recaptcha(privateKey, response, function(err) {
     if (err){ 
 	    console.log(err);
-	    console.log(response);
     	return res.send(err.message);
     }
     console.log('verified');
-    // res.send('verified');
-    // res.redirect(303, 'footer');
+    console.log(req.body['Name']);
+    console.log(req.body['Email']);
+    var html_text = 
+    '<h4>'+ req.body['Email'] +
+    '<h4>'+ req.body['Name'] +
+    '<p>' + req.body['Area'];
+    sendMail(html_text);
     res.redirect(303, '/');
   });
 

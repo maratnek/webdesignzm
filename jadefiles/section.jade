@@ -1,3 +1,48 @@
+mixin stage(icon, head, body)
+	.col-md-3.col-sm-6.col-xs-12
+		.stage
+			.icon-box
+				i.fs-icon(class='#{icon}')
+			.card
+				h3 #{head} 
+				p #{body}
+
+section.process.content
+	h2 Web Development Process
+	
+	+stage(
+	'icon-list', 
+	'Technical task',
+	'We gather your info goals and websites you like.'
+	)
+
+	+stage(
+	'icon-design-tool', 
+	'Prototype',
+	'A website prototype can be any mock-up or demo of what a website will look like when it goes live. '
+	)
+
+	+stage(
+	'icon-design', 
+	'Design',
+	'We create some design concepts. You pick one to polish. Finally we lock this in.'
+	)
+
+	+stage(
+	'icon-programming', 
+	'Programming',
+	'We now turn concept into the real html page. We test it in the major browsers and make sure it works. We then lock this and build the whole site.'
+	)
+
+section.technical-task
+	.content
+		.row
+			.col-md-8.col-sm-8
+				h3 Technical task
+				p 	This initial stage is where you define your goals and objectives for the web site and begin to collect and analyze the information you’ll need to justify the budget and resources required. This is also the time to define the scope of the site content, the interactive functionality and technology support required, and the depth and breadth of information resources that you will need to fill out the site and meet your users’ expectations. If you are contracting out the production of the web site, you will also need to interview and select a site design firm. Ideally, your site designers should be involved as soon as possible in the planning discussions.
+			.col-md-4.col-sm-4
+				p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente reprehenderit quasi maxime aperiam sit ullam magnam accusamus ipsam molestiae similique, ab minus natus quo cum voluptas incidunt, aut exercitationem quia.
+
 section
 	p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quisquam aut, facilis odit quasi voluptates iure earum ratione ea unde libero mollitia, corrupti consequatur tempora beatae harum voluptas suscipit quae.
 	p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa eaque, laboriosam repellat asperiores, vero voluptatem consectetur fugit nobis, dolorem odit molestias commodi officiis. Atque veritatis cupiditate enim, sed nihil repudiandae.

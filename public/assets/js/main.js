@@ -1,5 +1,3 @@
-// var path = document.querySelector('.path');
-// var length = path.getTotalLength();
 console.log("myJS");
 
 (function () {
@@ -8,15 +6,11 @@ console.log("myJS");
 			return $('.signature svg').each(function () {
 				var delay, i, len, length, path, paths, 
 				previousStrokeLength, results, speed, speed_down;
-				console.log(this);
 				paths = $('path, circle, rect', this);
 				delay = 0;
 				results = [];
 				speed_down = 250;
 				for (i = 0, len = paths.length; i < len; i++) {
-					// if (window.CP.shouldStopExecution(1)) {
-					// 	break;
-					// }
 					path = paths[i];
 					length = path.getTotalLength();
 					previousStrokeLength = speed || 0;
@@ -25,7 +19,6 @@ console.log("myJS");
 					delay += previousStrokeLength + 100;
 					results.push($(path).css('transition', 'none').attr('data-length', length).attr('data-speed', speed).attr('data-delay', delay).attr('stroke-dashoffset', length).attr('stroke-dasharray', length + ',' + length));
 				}
-				// window.CP.exitedLoop(1);
 				return results;
 			});
 		},
@@ -35,16 +28,12 @@ console.log("myJS");
 				paths = $('path, circle, rect', this);
 				results = [];
 				for (i = 0, len = paths.length; i < len; i++) {
-					// if (window.CP.shouldStopExecution(2)) {
-					// 	break;
-					// }
 					path = paths[i];
 					length = $(path).attr('data-length');
 					speed = $(path).attr('data-speed');
 					delay = $(path).attr('data-delay');
 					results.push($(path).css('transition', 'stroke-dashoffset ' + speed + 'ms ' + delay + 'ms linear').attr('stroke-dashoffset', '0'));
 				}
-				// window.CP.exitedLoop(2);
 				return results;
 			});
 		}
@@ -87,8 +76,6 @@ console.log("myJS");
  //            alert("Data: " + data + "\nStatus: " + status);
  //        });
  //    });
-
-
 
 	// Parallax
 	console.log('trace');
