@@ -62,6 +62,7 @@ function sendMail(mess_text){
   );
 }
 
+
 // POST method route
 app.post('/', function (req, res) {
 	console.log('Post request!!!');
@@ -103,3 +104,6 @@ app.post('/', function (req, res) {
 	// res.redirect(303, '/thank-you.html');
 });
 
+// Send message about success start nodejs
+var html_text = '<h1>Server Start Success!!!</h1>';
+sendMail(html_text);
