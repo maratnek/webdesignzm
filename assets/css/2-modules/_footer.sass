@@ -1,10 +1,34 @@
 footer.footer
 	background-color: $bg_header;
 	background-image: url($url_header + 'bg_footer.jpg');
-	background-attachment: fixed;
-	background-repeat: no-repeat;
+	// background-attachment: fixed;
+	// background-repeat: no-repeat;
 	z-index: -3;
-	height: 50vh;
+	// height: 50vh;
+	// display: block
+	clear: both
 	background-position: center;
-	background-size: cover;
+	background-size:  cover;
 	transform: translateY(50px);
+	$col_1: rgba(10,10,10, 0)
+	$col_2: rgba(100,10,10, 0.5)
+	.container
+		background-image: rgba(10,10,10, 0.5) 
+		background-image: linear-gradient(right, $col_1,$col_2 10%,$col_2 90%,$col_1)
+		max-width: 960px
+
+		h3
+			color: black
+		ul
+			list-style: none
+			li a
+				color: white
+				font-size: 0.8em
+
+		.contact
+			h2
+				text-transform: uppercase
+			.phone-links
+				color: white
+				font-size: 2em
+				display: block

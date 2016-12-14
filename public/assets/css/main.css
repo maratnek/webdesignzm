@@ -766,7 +766,7 @@ section {
         font-size: 1em; }
 
 .stage-section {
-  margin: auto 12%;
+  margin: auto;
   background: #763029;
   background-origin: border-box;
   background-clip: content-box;
@@ -806,15 +806,32 @@ section {
 footer.footer {
   background-color: #646464;
   background-image: url("../img/bg_footer.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   z-index: -3;
-  height: 50vh;
+  clear: both;
   background-position: center;
   background-size: cover;
   -webkit-transform: translateY(50px);
       -ms-transform: translateY(50px);
           transform: translateY(50px); }
+  footer.footer .container {
+    background-image: rgba(10, 10, 10, 0.5);
+    background-image: -webkit-gradient(linear, right top, left top, from(rgba(10, 10, 10, 0)), color-stop(10%, rgba(100, 10, 10, 0.5)), color-stop(90%, rgba(100, 10, 10, 0.5)), color-stop(90%, rgba(10, 10, 10, 0)));
+    background-image: -webkit-linear-gradient(right, rgba(10, 10, 10, 0), rgba(100, 10, 10, 0.5) 10%, rgba(100, 10, 10, 0.5) 90%, rgba(10, 10, 10, 0));
+    background-image: linear-gradient(right, rgba(10, 10, 10, 0), rgba(100, 10, 10, 0.5) 10%, rgba(100, 10, 10, 0.5) 90%, rgba(10, 10, 10, 0));
+    max-width: 960px; }
+    footer.footer .container h3 {
+      color: black; }
+    footer.footer .container ul {
+      list-style: none; }
+      footer.footer .container ul li a {
+        color: white;
+        font-size: 0.8em; }
+    footer.footer .container .contact h2 {
+      text-transform: uppercase; }
+    footer.footer .container .contact .phone-links {
+      color: white;
+      font-size: 2em;
+      display: block; }
 
 body.loader {
   width: 100%;

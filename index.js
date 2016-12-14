@@ -8,7 +8,7 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
 // views is directory for all template files
-app.set('views', __dirname + '/jadefiles');
+app.set('views', [__dirname + '/jadefiles', __dirname + '/jadefiles/makeup-example']);
 app.set('view engine', 'jade');
 
 app.get('/', function(request, response) {
@@ -17,6 +17,11 @@ app.get('/', function(request, response) {
 
 app.get('/footer', function(request, response) {
   response.render('footer',{title: 'WebDesignZM'});
+});
+
+app.get('/makeup-example', function(request, response) {
+  // response.send('makeup-example');
+  response.render('makeup-example');
 });
 
 
@@ -106,4 +111,4 @@ app.post('/', function (req, res) {
 
 // Send message about success start nodejs
 var html_text = '<h1>Server Start Success!!!</h1>';
-sendMail(html_text);
+// sendMail(html_text);
