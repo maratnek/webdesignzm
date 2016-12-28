@@ -110,5 +110,5 @@ app.post('/', function (req, res) {
 });
 
 // Send message about success start nodejs
-var html_text = '<h1>Server Start Success!!!</h1>';
+//var html_text = '<h1>Server Start Success!!!</h1>';
 // sendMail(html_text);
