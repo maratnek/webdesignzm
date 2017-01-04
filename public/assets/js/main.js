@@ -1,5 +1,3 @@
-console.log("myJS");
-
 (function () {
 	window.signature = {
 		initialize: function () {
@@ -126,6 +124,7 @@ console.log("myJS");
 		});
 
 	});
+
 
 }.call(this));
 

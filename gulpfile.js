@@ -3,8 +3,9 @@ var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
-var reload = browserSync.reload;
-var nodemon = require('gulp-nodemon');
+var uglify      = require('gulp-uglifyjs');
+var reload      = browserSync.reload;
+var nodemon     = require('gulp-nodemon');
 
 var messages = {
     expressBuild: '<span style="color: grey">Running:</span> $ express build'
@@ -48,9 +49,10 @@ gulp.task('browser-sync', ['sass', 'js', 'nodemon'], function() {
     });
 });
 
+
 gulp.task('js', function(){
     return gulp.src('assets/js/*.js')
-    // js compiler
+    // .pipe(uglify())
     .pipe(gulp.dest('public/assets/js'));
 });
 /**

@@ -34,6 +34,15 @@ section.process.content
 	'We now turn concept into the real html page. We test it in the major browsers and make sure it works. We then lock this and build the whole site.'
 	)
 
+-var path = "../"
+mixin slider(images)
+	.slider-container
+		for image in images
+			img.mySlides.slider_size(src=path+'assets/img/tech_task.svg#'+image)
+		for image in images
+			img.image_all(src=path+'assets/img/tech_task.svg#'+image)
+
+
 section.stage-section
 	.content
 		.row
@@ -42,8 +51,17 @@ section.stage-section
 				p 	This initial stage is where you define your goals and objectives for the web site and begin to collect and analyze the information you’ll need to justify the budget and resources required. This is also the time to define the scope of the site content, the interactive functionality and technology support required, and the depth and breadth of information resources that you will need to fill out the site and meet your users’ expectations. If you are contracting out the production of the web site, you will also need to interview and select a site design firm. Ideally, your site designers should be involved as soon as possible in the planning discussions.
 			.col-md-4.col-sm-4
 				.section-logo
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente reprehenderit quasi maxime aperiam sit ullam magnam accusamus ipsam molestiae similique, ab minus natus quo cum voluptas incidunt, aut exercitationem quia.
-
+					.w3-content.w3-display-container(style="max-width:800px")
+						img.mySlides(src="assets/img/small/dev_site.jpg" style="width:100%")
+						img.mySlides(src="assets/img/small/bg_header2.jpg" style="width:100%")
+						img.mySlides(src="assets/img/small/dev_site.jpg" style="width:100%")
+						img.mySlides(src="assets/img/small/bg_header2.jpg" style="width:100%")
+						.w3-center.w3-section.w3-large.w3-text-white.w3-display-bottommiddle(style='width:100%')
+							span.w3-badge.demo.w3-border.w3-transparent.w3-hover-white(onclick='currentDiv(1)')
+							span.w3-badge.demo.w3-border.w3-transparent.w3-hover-white(onclick='currentDiv(2)')
+							span.w3-badge.demo.w3-border.w3-transparent.w3-hover-white(onclick='currentDiv(3)')
+							span.w3-badge.demo.w3-border.w3-transparent.w3-hover-white(onclick='currentDiv(4)')
+								
 section.stage-section
 	.content
 		.row

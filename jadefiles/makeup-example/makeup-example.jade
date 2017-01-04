@@ -1,8 +1,19 @@
+-var path = "../"
+mixin slider(images)
+	.slider-container
+		for image in images
+			img.mySlides.slider_size(src=path+'assets/img/tech_task.svg#'+image)
+		for image in images
+			img.image_all(src=path+'assets/img/tech_task.svg#'+image)
+
 doctype html
 html(lang="en")
-head
-	meta(charset="UTF-8")
-	title Document
-body
-	h1 My First MakeUp
-	
+	head
+		meta(charset="UTF-8")
+		title= title
+		link(rel="stylesheet" href=path+'assets/css/main.css')
+	body
+		h1 My First MakeUp test
+		+slider(['id1', 'id2', 'id3'])
+
+		script(src=path+'assets/js/slider.js')

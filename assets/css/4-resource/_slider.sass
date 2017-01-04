@@ -1,0 +1,58 @@
+.slider-container
+	width: 300px
+	text-align: center
+	margin: auto
+
+	img.slider_size 
+		width: 300px
+		display: block
+		margin: auto
+		transform-origin: center
+		animation: slider_anim 4s forwards
+
+img.image_all
+	display: none
+	width: 30%
+	opacity: 0
+	float: left
+	transform-origin: center
+
+	&:nth-child(4)
+		animation: image_anim 1s forwards
+
+	&:nth-child(5)
+		animation: image_anim 1s 500ms forwards
+
+	&:nth-child(6)
+		animation: image_anim 1s 1s forwards
+
+	// img.image_all:first-child
+	// 		animation: image_anim 3s forwards
+
+
+@keyframes image_trans
+	0%
+		transform: translate(-50px, -50px) 
+		opacity: 0.5
+	100%
+		transform: translate(0px, 0px) 
+		opacity: 1
+
+@keyframes image_anim
+	0%
+		transform: rotateY(-90deg) skewY(-40deg)
+		opacity: 0.5
+	100%
+		// transform: rotateY(90deg) skewY(20deg)
+		transform: rotateY(0deg) skewY(0deg)
+		opacity: 1
+
+@keyframes slider_anim
+	0%
+		transform: rotateY(-90deg) skewY(-40deg)
+	20%
+		transform: rotateY(0deg) skewY(0deg)
+	80%
+		transform: rotateY(0deg) skewY(0deg) 
+	100%
+		transform: rotateY(90deg) skewY(20deg)

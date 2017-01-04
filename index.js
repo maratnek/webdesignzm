@@ -15,14 +15,14 @@ app.get('/', function(request, response) {
   response.render('index',{title: 'WebDesignZM'});
 });
 
-app.get('/footer', function(request, response) {
-  response.render('footer',{title: 'WebDesignZM'});
-});
+// app.get('/makeup-example', function(request, response) {
+//   response.render('makeup-example',{title: 'WebDesignZM'});
+// });
 
-app.get('/makeup-example', function(request, response) {
-  // response.send('makeup-example');
-  response.render('makeup-example');
-});
+app.get('/makeup-example/:userId', function (req, res) {
+  console.log(req.params.userId);
+  res.render(req.params.userId);
+})
 
 
 app.listen(app.get('port'), function() {
