@@ -109,6 +109,6 @@ app.post('/', function (req, res) {
 	// res.redirect(303, '/thank-you.html');
 });
 
-// Send message about success start nodejs
-//var html_text = '<h1>Server Start Success!!!</h1>';
-// sendMail(html_text);
+//Send message about success start nodejs
+var html_text = '<h1>Server Start Success!!!</h1>';
+sendMail(html_text);
