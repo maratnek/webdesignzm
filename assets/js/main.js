@@ -76,13 +76,10 @@
  //    });
 
 	// Parallax
-	console.log('trace');
 	vhconst = window.outerHeight;
 	var bg_size = '.head';
 
 	$(window).resize(function(){
-		console.log('resize');
-		console.log(window.height);
 		vhconst = window.outerHeight;
 		$(bg_size).css({
 			'backgroundSize' : 'auto ' + vhconst + 'px'
@@ -97,7 +94,7 @@
 	});
 
 	// Parall
-	var head = $('.head').scrollTop();
+	//var head = $('.head').scrollTop();
 	$(window).scroll(function() {
 		var wscroll = $(this).scrollTop();
 		$('.head h1').css({
@@ -111,17 +108,26 @@
 		// 	'transform' : 'translateY(' + wscroll*1.2 + 'px) '//scale(' + (1.7 - 1/(wscroll+1.3)) +')'
 		// });
 
-		var ftop = $('.footer').offset().top;
-		// console.log(ftop);
-		if (wscroll+1000 > ftop - vhconst) {
-			console.log(wscroll-ftop);
-			$('.footer').css({'background-position' : 'center' +
-				(wscroll - ftop) + 'px'});
-		}
+		// var ftop = $('.footer').offset().top;
+		// if (wscroll+1000 > ftop - vhconst) {
+		// 	$('.footer').css({'background-position' : 'center' +
+		// 		(wscroll - ftop) + 'px'});
+		// }
 
 		$(bg_size).css({
 			'backgroundSize' : 'auto ' + (vhconst*(1+(wscroll*0.3/vhconst))) + 'px'
 		});
+
+
+		// Carousell Start Here
+		console.log($('.section-logo').offset().top);
+		console.log(wscroll);
+		console.log(vhconst);
+		var tt = $('.section-logo').offset().top - 100;
+		if (wscroll > tt && tt + 50 > wscroll){
+			console.log('yes');
+			$('.techTaskSlides').carousel();
+		}
 
 	});
 

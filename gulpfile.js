@@ -52,7 +52,7 @@ gulp.task('browser-sync', ['sass', 'js', 'nodemon'], function() {
 
 gulp.task('js', function(){
     return gulp.src('assets/js/*.js')
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest('public/assets/js'));
 });
 /**

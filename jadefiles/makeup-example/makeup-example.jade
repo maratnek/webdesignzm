@@ -1,10 +1,11 @@
 -var path = "../"
 mixin slider(images)
-	.slider-container
+	for image in images
+		img.mySlides.slider_size(src=path+'assets/img/tech_task.svg#'+image)
+	-var len = images.length
+	.image-container
 		for image in images
-			img.mySlides.slider_size(src=path+'assets/img/tech_task.svg#'+image)
-		for image in images
-			img.image_all(src=path+'assets/img/tech_task.svg#'+image)
+			img.image_all(class='col-xs-'+len+' col-sm-'+len,src=path+'assets/img/tech_task.svg#'+image)
 
 doctype html
 html(lang="en")
@@ -14,6 +15,7 @@ html(lang="en")
 		link(rel="stylesheet" href=path+'assets/css/main.css')
 	body
 		h1 My First MakeUp test
-		+slider(['id1', 'id2', 'id3'])
+		.section-logo
+			+slider(['id1', 'id2', 'id3'])
 
-		script(src=path+'assets/js/slider.js')
+		script(src=path+'assets/js/main.js')
